@@ -6,10 +6,12 @@ in float Red;
 
 uniform sampler2D textureSampler;
 
+out vec4 color;
+
 void main()
 {
     if(Red == 0.0)
-        gl_FragColor = texture2D(textureSampler, TexCoord);
+        color = texture(textureSampler, TexCoord);
     else if(Red == 1.0)
-        gl_FragColor = texture2D(textureSampler, TexCoord) * vec4(1, 0, 0, 1);
+        color = texture(textureSampler, TexCoord) * vec4(1, 0, 0, 1);
 }
